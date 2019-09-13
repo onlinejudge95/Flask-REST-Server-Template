@@ -1,10 +1,10 @@
 """
 Module to provide ping controller functionality
 """
-from flask_restplus import Resource
-
 from ..service import ping as service
 from ..utils import decorators, dto
+from flask_restplus import Resource
+
 
 api = dto.PingDto.api
 

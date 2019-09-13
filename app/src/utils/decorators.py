@@ -1,7 +1,8 @@
-import functools
+from .dto import PingDto
 from flask import request
 
-from .dto import PingDto
+import functools
+
 
 api = PingDto.api
 
