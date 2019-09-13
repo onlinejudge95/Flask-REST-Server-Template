@@ -1,0 +1,9 @@
+__pycache__/
+.git/
+.pip.cache/
+.vscode/
+env/
+
+.env.example
+.gitignore
+.isort.cfg
