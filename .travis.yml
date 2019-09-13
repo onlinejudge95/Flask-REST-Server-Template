@@ -10,6 +10,11 @@ python:
 
 cache: pip
 
+env:
+  global:
+    - FLASK_ENV=testing
+    - FLASK_DEBUG=False
+
 install:
   - pip install --cache-dir .pip.cache/ --progress-bar emoji --upgrade pip setuptools
   - pip install --cache-dir .pip.cache/ --progress-bar emoji --requirement requirements/test.txt
