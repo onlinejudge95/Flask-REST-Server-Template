@@ -1,0 +1,4 @@
+-r prod.txt
+
+# For development server
+watchdog==0.9.0

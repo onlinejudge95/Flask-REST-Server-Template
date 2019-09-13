@@ -1,0 +1,11 @@
+-r prod.txt
+
+# For vulnerability check
+safety==1.8.5
+
+# For code formatting
+black==19.3b0
+isort==4.3.21
+
+# For testing
+Flask-Testing==0.7.1

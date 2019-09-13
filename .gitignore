@@ -1,0 +1,6 @@
+__pycache__/
+.pip.cache/
+.vscode/
+env/
+
+.env
