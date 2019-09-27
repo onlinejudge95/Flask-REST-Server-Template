@@ -25,3 +25,6 @@ script:
   - safety check --full-report --file requirements/test.txt
   - pylint --rcfile .pylintrc manage.py app
   - python manage.py test
+
+after_success:
+  - codecov

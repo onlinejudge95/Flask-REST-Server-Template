@@ -6,5 +6,8 @@ safety==1.8.5
 # For static analysis
 pylint==2.4.1
 
+# For code coverage reporting
+codecov==2.0.15
+
 # For testing
 Flask-Testing==0.7.1
