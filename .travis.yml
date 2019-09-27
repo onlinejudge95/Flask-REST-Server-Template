@@ -24,7 +24,7 @@ script:
   - safety check --full-report --file requirements/dev.txt
   - safety check --full-report --file requirements/test.txt
   - pylint --rcfile .pylintrc manage.py app
-  - pytest --cov=app/src app/test --cov-report html
+  - pytest --cov-config=.coveragerc --cov-report xml --cov app app/test
 
 after_success:
   - codecov
