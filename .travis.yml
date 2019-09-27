@@ -23,5 +23,5 @@ script:
   - safety check --full-report --file requirements/prod.txt
   - safety check --full-report --file requirements/dev.txt
   - safety check --full-report --file requirements/test.txt
-  - pylint manage.py app
+  - pylint --rcfile .pylintrc manage.py app
   - python manage.py test
