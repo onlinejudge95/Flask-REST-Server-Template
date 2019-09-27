@@ -23,6 +23,5 @@ script:
   - safety check --full-report --file requirements/prod.txt
   - safety check --full-report --file requirements/dev.txt
   - safety check --full-report --file requirements/test.txt
-  - black --verbose --line-length 79 --target-version py37 *.py app
-  - isort --verbose --force-alphabetical-sort-within-sections --case-sensitive --lines-after-imports 2 --lines-between-types 1 *.py app/*.py app/**/*.py
+  - pylint manage.py app
   - python manage.py test

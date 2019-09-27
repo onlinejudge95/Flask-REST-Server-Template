@@ -1,17 +1,25 @@
-from .dto import PingDto
-from flask import request
+"""
+Module for implementing custom decorators to extend function behaviour.
 
+Usage:-
+
+@decorator
+def function(*args, **kwargs):
+    pass
+"""
 import functools
 
 
-api = PingDto.api
-
-
 def validate_headers(func):
+    """
+    Decorator to validate any header
+
+    Currently it is left blank, we can implement following checks.
+    * Content-Type check
+    * Authorization check etc.
+    """
     @functools.wraps(func)
     def check(*args, **kwargs):
-        if request.headers.get("Content-Type") != "application/json":
-            return api.abort(415)
         return func(*args, **kwargs)
 
     return check
