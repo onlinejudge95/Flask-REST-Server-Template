@@ -1,7 +1,11 @@
 __pycache__/
 .pip.cache/
+.pytest.cache/
 .vscode/
 env/
+htmlcov/
 
+.DS_Store
 .env
 .coverage
+coverage.xml

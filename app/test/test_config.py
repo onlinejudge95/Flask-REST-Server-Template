@@ -1,8 +1,6 @@
 """
 Tests the app.main.config module.
 """
-import unittest
-
 from flask import current_app
 from flask_testing import TestCase
 
@@ -146,7 +144,3 @@ class TestProductionConfig(TestCase):
         defined config are set or not.
         """
         self.assertTrue(app.config.get("JSONIFY_PRETTYPRINT_REGULAR"))
-
-
-if __name__ == "__main__":
-    unittest.main()
