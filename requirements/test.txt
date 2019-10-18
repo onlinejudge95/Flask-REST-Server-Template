@@ -4,7 +4,7 @@
 safety==1.8.5
 
 # For static analysis
-pylint==2.4.2
+pylint==2.4.3
 
 # For code coverage reporting
 pytest==5.2.1
