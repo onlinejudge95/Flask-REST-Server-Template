@@ -7,7 +7,7 @@ safety==1.8.5
 pylint==2.4.3
 
 # For code coverage reporting
-pytest==5.2.1
+pytest==5.2.2
 pytest-cov==2.8.1
 codecov==2.0.15
 
