@@ -4,7 +4,7 @@ Module to provide ping controller functionality
 from flask_restplus import Resource
 
 from ..service import ping as service
-from ..utils import decorators, dto
+from ..utils import dto
 
 
 api = dto.PingDto.api  # pylint: disable=invalid-name
