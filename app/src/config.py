@@ -5,7 +5,7 @@ import pathlib
 import uuid
 
 
-class BaseConfig:  # pylint: disable=too-few-public-methods
+class BaseConfig:
     """
     Base configuration class to hold configuration settings as class variable.
 
@@ -21,7 +21,7 @@ class BaseConfig:  # pylint: disable=too-few-public-methods
     SECRET_KEY = uuid.uuid4().hex
 
 
-class DevelopmentConfig(BaseConfig):  # pylint: disable=too-few-public-methods
+class DevelopmentConfig(BaseConfig):
     """
     Configuration class to hold configuration settings as class variables for
     development environment
@@ -33,7 +33,7 @@ class DevelopmentConfig(BaseConfig):  # pylint: disable=too-few-public-methods
     JSONIFY_PRETTYPRINT_REGULAR = True
 
 
-class TestingConfig(BaseConfig):  # pylint: disable=too-few-public-methods
+class TestingConfig(BaseConfig):
     """
     Configuration class to hold configuration settings as class variables for
     testing environment
@@ -46,7 +46,7 @@ class TestingConfig(BaseConfig):  # pylint: disable=too-few-public-methods
     JSONIFY_PRETTYPRINT_REGULAR = True
 
 
-class ProductionConfig(BaseConfig):  # pylint: disable=too-few-public-methods
+class ProductionConfig(BaseConfig):
     """
     Configuration class to hold configuration settings as class variables for
     production environment

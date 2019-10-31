@@ -18,15 +18,9 @@ Use this repo as a template repo.
 
 ## Dependencies
 The server is tested in our travis account for following versions of Python
-* 3.6
 * 3.7
-* 3.7-dev
-* 3.8-dev
 
-The server dependencies are specified based according to the environment.
-* Production level dependencies are defined in `requirements/prod.txt`.
-* Development level dependencies are defined in `requirements/dev.txt`.
-* Testing level dependencies are defined in `requirements/test.txt`.
+The server dependencies specified in `Pipfile`.
 
 ## Docker
 The image is pushed to dockerhub {$LINK}, every push to git repository triggers a new build at the dockerhub.
@@ -51,12 +45,6 @@ $ source env/bin/activate
 ```
 To setup the db use the following commands.
 ```
-(env) $ mysql -u user -p
-mysql > CREATE DATABASE $DB;
-mysql > CREATE USER '$USER'@'$HOST' IDENTIFIED BY $PASSWORD;
-mysql > GRANT ALL PRIVILEGES ON * . * TO '$USER'@'$HOST';
-mysql > FLUSH PRIVILEGES;
-mysql > exit;
 (env) $ python manage.py db init
 ```
 To make a migration run the folowing commands
@@ -66,4 +54,4 @@ To make a migration run the folowing commands
 ```
 
 ## Contact
-[onlinejudge95](mailto:onlinejudge95@gmail.com)
+onlinejudge95

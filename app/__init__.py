@@ -6,9 +6,8 @@ from flask_restplus import Api
 
 from .src.controller.ping import api as ping_ns
 
-blueprint = Blueprint("api", __name__) # pylint: disable=invalid-name
+blueprint = Blueprint("api", __name__)
 
-# pylint: disable=invalid-name
 api = Api(
     blueprint,
     title="Flask-RESTplus API server",

@@ -23,7 +23,6 @@ class PingAPI(Resource):
 
     1. GET /ping/
     """
-    @decorators.validate_headers
     @api.doc("ping")
     def get(self):  # pylint: disable=no-self-use
         """Ping response to find if the server is up"""
