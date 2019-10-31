@@ -16,7 +16,6 @@ install:
   - pipenv install --dev
 
 script:
-  - pipenv check
   - pipenv run pylint --rcfile .pylintrc manage.py app
   - pipenv run pytest --cov-config=.coveragerc --cov-report xml --cov app app/test
 
