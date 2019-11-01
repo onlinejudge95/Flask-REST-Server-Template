@@ -3,12 +3,7 @@ dist: xenial
 language: python
 
 python:
-  - "3.6"
   - "3.7"
-  - "3.7-dev"
-  - "3.8-dev"
-
-cache: pip
 
 env:
   global:
@@ -16,15 +11,14 @@ env:
     - FLASK_DEBUG=False
 
 install:
-  - pip install --cache-dir .pip.cache/ --progress-bar emoji --upgrade pip setuptools
-  - pip install --cache-dir .pip.cache/ --progress-bar emoji --requirement requirements/test.txt
+  - pip install --upgrade pip setuptools pipenv
+  - pipenv install
+  - pipenv install --dev
 
 script:
-  - safety check --full-report --file requirements/prod.txt
-  - safety check --full-report --file requirements/dev.txt
-  - safety check --full-report --file requirements/test.txt
-  - pylint --rcfile .pylintrc manage.py app
-  - pytest --cov-config=.coveragerc --cov-report xml --cov app app/test
+  - pipenv run vulture --min-confidence 61 .
+  - pipenv run pylint --rcfile .pylintrc manage.py app
+  - pipenv run pytest --cov-config=.coveragerc --cov-report xml --cov app app/test
 
 after_success:
-  - codecov
+  - pipenv run codecov

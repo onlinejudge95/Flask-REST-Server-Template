@@ -1,8 +1,6 @@
 __pycache__/
-.pip.cache/
-.pytest.cache/
+.pytest_cache/
 .vscode/
-env/
 htmlcov/
 
 .DS_Store
