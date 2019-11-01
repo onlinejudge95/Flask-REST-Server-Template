@@ -9,7 +9,7 @@ from app import blueprint
 from app.src import create_app
 
 
-app = create_app(os.getenv("FLASK_ENV") or "development")  # pylint: disable=invalid-name
+app = create_app(os.getenv("FLASK_ENV") or "development")
 app.register_blueprint(blueprint)
 CORS(app, resources={"/ping/*": {"origins": "*"}})
 app.app_context().push()

@@ -1,15 +1,17 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
-RUN apt-get update -y
-RUN apt-get install -y python3.7 python3.7-dev python3.7-venv python3-venv
+RUN apt update -y && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt install -y python3.7 python3-pip
 
 RUN mkdir -p /var/www/backend
 WORKDIR /var/www/backend
 
 COPY . .
 
-RUN python3.7 -m venv env && \
-    ./env/bin/pip install --no-cache-dir --upgrade pip setuptools && \
-    ./env/bin/pip install --no-cache-dir --progress-bar emoji --requirement requirements/prod.txt
+RUN python3.7 -m pip install --no-cache-dir --upgrade pip setuptools pipenv && \
+    pipenv install && \
+    pipenv install --dev
 
-CMD [ "env/bin/gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "manage:app" ]
+CMD ["pipenv run gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "manage:app"]
