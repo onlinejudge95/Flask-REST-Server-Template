@@ -3,15 +3,15 @@ Module to provide ping controller functionality
 """
 from flask_restplus import Resource
 
-from ..service import ping as service
-from ..utils import dto
+from app.src.service import ping as service
+from app.src.utils import serializer
 
 
-api = dto.PingDto.api  # pylint: disable=invalid-name
+api = serializer.AppSerializer.ping_api
 
 
 @api.route("/")
-class PingAPI(Resource):
+class PingView(Resource):
     """
     Ping controller class.
     It handles the ping operation routing.
@@ -23,7 +23,8 @@ class PingAPI(Resource):
 
     1. GET /ping/
     """
+    @staticmethod
     @api.doc("ping")
-    def get(self):  # pylint: disable=no-self-use
+    def get():
         """Ping response to find if the server is up"""
         return service.ping()

@@ -4,10 +4,10 @@ App factory for our server.
 import os
 import pathlib
 
-from dotenv import find_dotenv, load_dotenv
+from dotenv import load_dotenv
 from flask import Flask
 
-from .config import CFG_MAP
+from app.src.config import CFG_MAP
 
 
 load_dotenv(dotenv_path=str(pathlib.Path.cwd() / ".env"), verbose=True)
